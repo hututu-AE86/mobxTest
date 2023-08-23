@@ -2,7 +2,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import { View,Text, Button } from 'react-native';
-import CounterStore from './stores/CounterStore';
+import CounterStore from '../stores/CounterStore';
 
 interface CounterControlsProps {
   counterStore: CounterStore; // MobX Store

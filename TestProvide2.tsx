@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import CounterDisplay from './CounterDisplay';
-import CounterControls from './CounterControls';
+import CounterDisplay from './components/CounterDisplay';
+import CounterControls from './components/CounterControls';
 import CounterStore from './stores/CounterStore';
 
 const TestProvide2: React.FC = () => {
