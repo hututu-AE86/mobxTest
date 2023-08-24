@@ -1,7 +1,7 @@
 /**
  * @format
  */
-
+import React from 'react';
 import {AppRegistry} from 'react-native';
 // import App from './App';
 import {name as appName} from './app.json';
@@ -13,9 +13,9 @@ import counterStoreForInject from './stores/CounterStoreForInject';
 import TestProvide from './TestProvide'; // 假设你的根组件为 TestProvide.tsx
 
 const Root = () => (
-    <Provider store={counterStoreForInject}>
+    // <Provider store={counterStoreForInject}>
       <TestProvide />
-    </Provider>
+    // </Provider>
   );
 
 //   const Root2 = () => (
@@ -26,4 +26,5 @@ const Root = () => (
 
 // AppRegistry.registerComponent(appName, () => App);
 // AppRegistry.registerComponent(appName, () => Root2);
+// AppRegistry.registerComponent(appName, () => TestProvide);
 AppRegistry.registerComponent(appName, () => Root);

@@ -5,7 +5,7 @@ import { View,Text, Button } from 'react-native';
 import CounterStore from '../stores/CounterStore';
 
 interface CounterControlsProps {
-  counterStore: CounterStore; // MobX Store
+  counterStore: typeof CounterStore; // MobX Store
 }
 
 const CounterControls: React.FC<CounterControlsProps> = ({ counterStore }) => {

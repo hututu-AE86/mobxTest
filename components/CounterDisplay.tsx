@@ -6,7 +6,7 @@ import CounterStore from '../stores/CounterStore';
 
 
 interface CounterDisplayProps {
-  counterStore: CounterStore; // MobX Store
+  counterStore: typeof CounterStore; // MobX Store
 }
 
 const CounterDisplay: React.FC<CounterDisplayProps> = ({ counterStore }) => {

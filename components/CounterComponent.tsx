@@ -7,6 +7,7 @@ interface CounterProps {
   store: typeof counterStoreForInject; // 引入并指定store类型
 }
 
+// class CounterComponent extends Component {
 @inject('store')
 @observer
 class CounterComponent extends Component<CounterProps> {
@@ -19,7 +20,7 @@ class CounterComponent extends Component<CounterProps> {
   };
 
   render() {
-    console.log('Component re-rendered! 12121-13-17');
+    console.log('Component re-rendered! 123');
 
     const { count } = this.props.store!;
     
@@ -27,9 +28,17 @@ class CounterComponent extends Component<CounterProps> {
       <View  style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Button title="Increment" onPress={this.handleIncrement} />
         <Button title="Decrement" onPress={this.handleDecrement} />
-        <Text>当前计数：{count}</Text>
+        <Text>当前 1245633 计数：{count}</Text>
         </View>
     );
+
+    // return (
+    //   <View  style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    //       <Button title="Increment" onPress={() => {counterStoreForInject.increment()}} />
+    //       <Button title="Decrement" onPress={() => {counterStoreForInject.decrement()}} />
+    //       <Text>当前232计数：{counterStoreForInject.count}</Text>
+    //      </View>
+    //   );
   }
 
 }
