@@ -22,14 +22,19 @@ class CounterComponent extends Component<CounterProps> {
   render() {
     console.log('Component re-rendered! 123');
 
-    const { count } = this.props.store!;
+    const { count, incrementA, decrementA} = this.props.store;
     
     return (
       <View  style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Button title="Increment" onPress={this.handleIncrement} />
         <Button title="Decrement" onPress={this.handleDecrement} />
-        <Text>当前 1245633 计数：{count}</Text>
-        </View>
+        <Text>当前 123 计数：{count}</Text>
+        <Text>当前 123 计数：{this.props.store?.count}</Text>
+        <Text>当前 1233 计数：{this.props.store.getCount}</Text>
+        <Button title="IncrementA" onPress={incrementA} />
+        <Button title="DecrementA" onPress={decrementA} />
+        <Text>当前 action.bound 计数：{this.props.store?.getCount}</Text>
+      </View>
     );
 
     // return (
