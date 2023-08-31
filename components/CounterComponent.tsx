@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
-import { observer ,inject } from 'mobx-react';
+import { observer ,inject,PropTypes as PT } from 'mobx-react';
 import counterStoreForInject from '../stores/CounterStoreForInject';
+import PropTypes, { number } from 'prop-types';
 
 interface CounterProps {
   store: typeof counterStoreForInject; // 引入并指定store类型
@@ -11,6 +12,11 @@ interface CounterProps {
 @inject('store')
 @observer
 class CounterComponent extends Component<CounterProps> {
+
+  static propTypes = {
+    store:PT.observableObject,
+  };
+
   handleIncrement = () => {
     this.props.store?.increment(); // 调用store中的方法
   };
@@ -22,8 +28,10 @@ class CounterComponent extends Component<CounterProps> {
   render() {
     console.log('Component re-rendered! 123');
 
+    const { store } = this.props;
     const { count, incrementA, decrementA} = this.props.store;
-    
+   
+
     return (
       <View  style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Button title="Increment" onPress={this.handleIncrement} />
